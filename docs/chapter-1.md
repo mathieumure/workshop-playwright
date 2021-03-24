@@ -13,7 +13,7 @@ node -v
 - Cloner le repository du handson 
 
 ```shell
-git clone https://github.com/mathieumure/handson-playwright
+git clone https://github.com/mathieumure/handson-playwright.git
 ```
 
 - Puis installer les dépendances
