@@ -11,7 +11,6 @@ npm install --save-dev jest jest-playwright-preset
 ```
 
 - Créer un fichier `jest.config.js` à la racine du projet et ajouter la config suivante :
-
 ```js
 module.exports = {
   preset: "jest-playwright-preset",
@@ -20,10 +19,28 @@ module.exports = {
 ```
 
 - Créer un fichier de test `my-test.spec.js`
-- Ajouter un script test dans package.json pour lancer les tests
-- Implémenter les tests pour chaque section de la partie précédente
 
-## Lancer pour tous les navigateurs
+- Ajouter un script test dans package.json pour lancer les tests
+```json
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+
+- Implémenter les tests pour chaque section de la partie précédente
+```javascript
+describe('My Test', () => {
+  it('should do some stuff', () => {
+    // TODO your test here
+    expect(true).toEqual(false);
+  });
+});
+
+```
+
+## Un peu de config
 
 - Dans la config de jest, ajouter l'option pour lancer les 3 navigateurs
 
@@ -37,7 +54,7 @@ module.exports = {
 }
 ```
 
-- Ajouter une option pour lancer sans headless.
+- Ajouter une option pour lancer sans headless en fonction d'une variable d'environnement `NO_HEADLESS`.
 
 ## Un système de screenshots automatiques
 
@@ -47,7 +64,7 @@ const PlaywrightEnvironment = require('jest-playwright-preset/lib/PlaywrightEnvi
 const fs = require('fs/promises');
 const path = require('path');
 
-const screenshotsPath = path.join(__dirname, 'screenshots');
+const screenshotsPath = path.join(__dirname, '..', 'screenshots');
 
 class PlaywrightEnv extends PlaywrightEnvironment {
   async handleTestEvent(event) {

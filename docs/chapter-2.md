@@ -20,11 +20,11 @@
 
 > ⚠️ Pensez à fermer vos pages et vos navigateurs, pour que le programme se termine.
 
-- **BONUS** : Lancer votre navigateur sans mode headless.
+- Lancer votre navigateur sans mode headless.
 
 ## Screenshot
 
-- Faire un [screenshot](https://playwright.dev/docs/screenshots) de la page lorsqu'elle est chargée.
+- Faire un [screenshot](https://playwright.dev/docs/screenshots) de la page lorsqu'elle est chargée dans `screenshots/homepage.png`.
 
 ## Multi-navigateur
 
