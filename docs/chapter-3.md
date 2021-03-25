@@ -2,9 +2,7 @@
 
 ## Les boutons
 
-- Faire naviguer votre page sur `https://playwright.dev/`.
-
-- Attendre que le réseau est terminé de charger.
+- Attendre que le réseau ait terminé de charger.
 
 > ℹ️ Playwright a un système d'attente assez développé pour la [disponibilité d'un élement](https://playwright.dev/docs/actionability) mais il dispose également d'API pour attendre [certains états](https://playwright.dev/docs/api/class-page?_highlight=waitforlo#pagewaitforloadstatestate-options)
 
