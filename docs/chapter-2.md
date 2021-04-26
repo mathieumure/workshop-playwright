@@ -41,8 +41,11 @@ const browser = await chromium.launch();
 const pixel2 = devices['Pixel 2'];
 const context = await browser.newContext({
   ...pixel2,
+  isMobile: false
 });
 ```
 
 > ℹ️ Playwright vient d'annoncer le support d'[Android](https://playwright.dev/docs/api/class-android/) et d'[Electron](https://playwright.dev/docs/api/class-electron).
+
+> ⚠️  Les `devices` définissent une propriété `isMobile` qui n'est pas compatible avec `firefox`.
 
