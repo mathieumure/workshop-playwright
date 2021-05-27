@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "files": [
+    "./node_modules/jest/build/jest.d.ts",
+    "./node_modules/jest-playwright-preset/types/global.d.ts"
+  ]
+}
