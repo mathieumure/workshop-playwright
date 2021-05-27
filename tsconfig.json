@@ -6,9 +6,13 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "outDir": "dist"
   },
+  "include": [
+    "./*.ts"
+  ],
   "files": [
     "./node_modules/jest/build/jest.d.ts",
-    "./node_modules/jest-playwright-preset/types/global.d.ts"
+    "./node_modules/jest-playwright-preset/types/global.d.ts",
   ]
 }
