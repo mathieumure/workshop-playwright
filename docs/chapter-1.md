@@ -10,7 +10,7 @@ node -v
 
 ## Récupération du projet source
 
-- Cloner le repository du handson 
+- Cloner le repository du handson
 
 ```shell
 git clone https://github.com/mathieumure/handson-playwright.git
@@ -35,6 +35,7 @@ npm install --save-dev playwright
 ```
 
 - Vérifier ensuite qu'il soit bien installé
+
 ```shell
 yarn playwright --version
 # OR
@@ -42,9 +43,9 @@ yarn playwright --version
 ```
 
 - Vous devriez obtenir le résultat suivant
+
 ```shell
 Version 1.9.2
 ```
 
 Bravo 💪 ! Vous êtes maintenant prêt pour faire vos premiers pas avec playwright!
-

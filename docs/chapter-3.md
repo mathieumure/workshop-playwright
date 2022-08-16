@@ -32,7 +32,7 @@
 
 ## Le light mode
 
-- Aller le site `https://www.clubic.com` en simulant le mode light 
+- Aller le site `https://www.clubic.com` en simulant le mode light
 
 > ℹ️ Playwright propose une API pour [émuler plusieurs choses](https://playwright.dev/docs/emulation)
 

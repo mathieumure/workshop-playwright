@@ -11,16 +11,18 @@ npm install --save-dev jest jest-playwright-preset
 ```
 
 - Créer un fichier `jest.config.js` à la racine du projet et ajouter la config suivante :
+
 ```js
 module.exports = {
-  preset: "jest-playwright-preset",
+  preset: 'jest-playwright-preset',
   testTimeout: 35000, // Because playwright timeout is 30 seconds
-}
+};
 ```
 
 - Créer un fichier de test `my-test.spec.js`
 
 - Ajouter un script test dans package.json pour lancer les tests
+
 ```json
 {
   "scripts": {
@@ -30,6 +32,7 @@ module.exports = {
 ```
 
 - Implémenter les tests pour chaque section de la partie précédente
+
 ```javascript
 describe('My Test', () => {
   it('should do some stuff', () => {
@@ -37,7 +40,6 @@ describe('My Test', () => {
     expect(true).toEqual(false);
   });
 });
-
 ```
 
 ## Un peu de config
@@ -50,8 +52,8 @@ module.exports = {
     'jest-playwright': {
       browsers: [], // TODO
     },
-  }
-}
+  },
+};
 ```
 
 - Ajouter une option pour lancer sans headless en fonction d'une variable d'environnement `NO_HEADLESS`.
@@ -59,6 +61,7 @@ module.exports = {
 ## Un système de screenshots automatiques
 
 - ajouter une config `testEnvironment` pour jest `./scripts/testEnvironment.js` et créer le fichier avec le contenu suivant :
+
 ```javascript
 const PlaywrightEnvironment = require('jest-playwright-preset/lib/PlaywrightEnvironment').default;
 const fs = require('fs/promises');
