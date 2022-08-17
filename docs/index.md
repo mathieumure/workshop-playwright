@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Hands on 🎭 Playwright
+title: Workshop 🎭 Playwright
 
 hero:
-  name: Hands on 🎭 Playwright
+  name: Workshop 🎭 Playwright
   tagline: A la découverte de playwright, l'outil ultime pour le test e2e ?
   actions:
     - theme: brand

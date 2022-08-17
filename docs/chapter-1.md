@@ -10,7 +10,7 @@ node -v
 
 ## Récupération du projet source
 
-- Cloner le repository du handson
+- Cloner le repository du codelab
 
 ```shell
 git clone https://github.com/mathieumure/handson-playwright.git
@@ -19,6 +19,8 @@ git clone https://github.com/mathieumure/handson-playwright.git
 - Puis installer les dépendances
 
 ```shell
+pnpm install
+# OR
 yarn install
 # OR
 npm install
