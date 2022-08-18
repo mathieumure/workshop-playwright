@@ -1,89 +1,57 @@
-# Chapitre 4 - Avec Jest
+# Chapitre 4 - Les interactions
 
-## Des vrais tests
+🎯 L'objectif ici est de commencer à interagir avec la page.
 
-- Installer jest pour exécuter nos tests et [jest-playwright](https://github.com/playwright-community/jest-playwright), qui permet d'ajouter des utilitaires à jest
+## Les boutons
 
-```shell
-yarn add -D jest jest-playwright-preset
-# OR
-npm install --save-dev jest jest-playwright-preset
-```
+Nous allons cliquer sur le bouton `Getting started` et vérifier que la navigation fonctionne correctement.
 
-- Créer un fichier `jest.config.js` à la racine du projet et ajouter la config suivante :
+- Créez un nouveau fichier de test `src/chapter_4.spec.ts` et ajouter un nouveau test.
+- Naviguez vers `https://playwright.dev/`
+- Attendez que le réseau ait terminé de charger grâce à `page.waitForLoadState`.
 
+::: tip INFO
+ℹ️ Playwright a un système d'attente assez développé pour la [disponibilité d'un élement](https://playwright.dev/docs/actionability) mais il dispose également d'API pour attendre certains états :
+- [`waitForFunction`](https://playwright.dev/docs/api/class-page#page-wait-for-function)
+- [`waitForLoadState`](https://playwright.dev/docs/api/class-page#page-wait-for-load-state)
+- [`waitForNavigation`](https://playwright.dev/docs/api/class-page#page-wait-for-navigation)
+- [`waitForRequest`](https://playwright.dev/docs/api/class-page#page-wait-for-request)
+- [`waitForResponse`](https://playwright.dev/docs/api/class-page#page-wait-for-response)
+- [`waitForSelector`](https://playwright.dev/docs/api/class-page#page-wait-for-selector)
+- [`waitForTimeout`](https://playwright.dev/docs/api/class-page#page-wait-for-timeout)
+- [`waitForURL`](https://playwright.dev/docs/api/class-page#page-wait-for-url)
+:::
+
+- Cliquez sur le bouton contenant le texte `Getting started` et attendre qu'une navigation ait eu lieu, en même temps avec `Promise.all`.
+
+::: tip INFO
+ℹ️ Playwright dispose de [sélecteurs très puissants](https://playwright.dev/docs/selectors)
+:::
+
+- Vérifiez avec `expect` que l'URL de la page soit égale à `https://playwright.dev/docs/intro`.
+
+## La recherche
+
+Nous allons maintenant vérifier que la recherche fonctionne correctement.
+
+- Ajouter un nouveau test
+- Naviguez vers `https://playwright.dev/`
+- Depuis la page getting started, cliquez sur la barre de recherche
+- Saisissez le texte `selectors` dans le champ de recherche avec le placeholder `Search docs`. De la popup qui vient de s'afficher.
+
+::: tip INFO
+ℹ️ Playwright propose deux façons de remplir un champ soit en utilisant l'event input avec la méthode [fill](https://playwright.dev/docs/api/class-page#page-fill) ou encore en simulant la saisie utilisateur avec la méthode [type](https://playwright.dev/docs/api/class-page#page-type)
+:::
+
+- Attendez que la response d'Algolia, qui devrait répondre à la requête suivante `https://<some-dsn>.algolia.net/1/indexes/*/queries?<some-query-params>`
+::: tip
+Si les expressions régulières ne sont pas votre force :wink:, les requêtes Algolia peuvent être identifiées par
 ```js
-module.exports = {
-  preset: 'jest-playwright-preset',
-  testTimeout: 35000, // Because playwright timeout is 30 seconds
-};
+const alogoliaRequestRegex = /^https:\/\/.*.algolia.net\/1\/indexes\/\*\/queries\?/
 ```
+:::
 
-- Créer un fichier de test `my-test.spec.js`
+- Appuyez sur la touche [entrer](https://playwright.dev/docs/api/class-page#page-press).
+- Attendez qu'une navigation ait lieu.
+- Vérifiez avec `expect` que l'URL de la page soit égale à `https://playwright.dev/docs/selectors`.
 
-- Ajouter un script test dans package.json pour lancer les tests
-
-```json
-{
-  "scripts": {
-    "test": "jest"
-  }
-}
-```
-
-- Implémenter les tests pour chaque section de la partie précédente
-
-```javascript
-describe('My Test', () => {
-  it('should do some stuff', () => {
-    // TODO your test here
-    expect(true).toEqual(false);
-  });
-});
-```
-
-## Un peu de config
-
-- Dans la config de jest, ajouter l'option pour lancer les 3 navigateurs
-
-```javascript
-module.exports = {
-  testEnvironmentOptions: {
-    'jest-playwright': {
-      browsers: [], // TODO
-    },
-  },
-};
-```
-
-- Ajouter une option pour lancer sans headless en fonction d'une variable d'environnement `NO_HEADLESS`.
-
-## Un système de screenshots automatiques
-
-- ajouter une config `testEnvironment` pour jest `./scripts/testEnvironment.js` et créer le fichier avec le contenu suivant :
-
-```javascript
-const PlaywrightEnvironment = require('jest-playwright-preset/lib/PlaywrightEnvironment').default;
-const fs = require('fs/promises');
-const path = require('path');
-
-const screenshotsPath = path.join(__dirname, '..', 'screenshots');
-
-class PlaywrightEnv extends PlaywrightEnvironment {
-  async handleTestEvent(event) {
-    if (event.name === 'test_done' && event.test.errors.length > 0) {
-      const parentName = event.test.parent.name.replace(/\W/g, '-');
-      const specName = event.test.name.replace(/\W/g, '-');
-      const { browserName } = this._config;
-
-      await this.global.page.screenshot({
-        path: path.join(screenshotsPath, `${browserName}_${parentName}_${specName}.png`),
-      });
-    }
-  }
-}
-
-module.exports = PlaywrightEnv;
-```
-
-- Faire en sorte que vos tests échouent et vérifier l'apparition d'un screenshot.

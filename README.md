@@ -43,9 +43,9 @@ npm run docs:dev
 
 👤 **Mathieu Mure <mathieu.mure@gmail.com>**
 
-* Twitter: [@mathieumure](https://twitter.com/mathieumure)
-* Github: [@mathieumure](https://github.com/mathieumure)
-* Linkedin: [mathieu-mure](https://www.linkedin.com/in/mathieu-mure/)
+- Twitter: [@mathieumure](https://twitter.com/mathieumure)
+- Github: [@mathieumure](https://github.com/mathieumure)
+- Linkedin: [mathieu-mure](https://www.linkedin.com/in/mathieu-mure/)
 
 ## Show your support
 

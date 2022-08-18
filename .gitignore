@@ -32,3 +32,6 @@ lerna-debug.log*
 vitepress
 
 # e2e
+/test-results/
+/playwright-report/
+/playwright/.cache/

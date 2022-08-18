@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 export default defineConfig({
   title: 'Workshop playwright 🎭 ',
@@ -12,16 +12,19 @@ export default defineConfig({
       pattern: 'https://github.com/mathieumure/workshop-playwright/edit/main/docs/:path',
       text: 'Editer cette page sur GitHub',
     },
+    nav: [
+      { text: 'Workshop', link: '/chapter-1', activeMatch: 'chapter\-.*' },
+    ],
     sidebar: [
       {
         text: 'Workshop playwright 🎭',
         items: [
           { text: 'Chapitre 1 - Getting started', link: '/chapter-1' },
           { text: 'Chapitre 2 - Les premiers pas', link: '/chapter-2' },
-          { text: 'Chapitre 3 - Les interactions', link: '/chapter-3' },
-          { text: 'Chapitre 4 - Avec Jest', link: '/chapter-4' },
+          { text: 'Chapitre 3 - Configurer les tests', link: '/chapter-3' },
+          { text: 'Chapitre 4 - Les interactions', link: '/chapter-4' },
         ],
       },
     ],
   },
-})
+});

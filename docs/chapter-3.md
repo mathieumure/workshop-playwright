@@ -1,45 +1,85 @@
-# Chapitre 3 - Les interactions
+# Chapitre 3 - Configurer les tests
 
-## Les boutons
+🎯 L'objectif ici est de configurer playwright pour lancer des tests.
 
-- Attendre que le réseau ait terminé de charger.
+## Configuration des tests
 
-> ℹ️ Playwright a un système d'attente assez développé pour la [disponibilité d'un élement](https://playwright.dev/docs/actionability) mais il dispose également d'API pour attendre [certains états](https://playwright.dev/docs/api/class-page?_highlight=waitforlo#pagewaitforloadstatestate-options)
+Il maintenant tant que configurer votre projet pour qu'il puisse lancer des tests automatisés.
 
-- Cliquer sur le bouton contenant le texte `Getting started` et attendre une navigation en même temps avec `Promise.all`.
+Pour cela, Playwright met à disposition un package dédié `@playwright/test`.
 
-> ℹ️ Playwright dispose de [sélecteurs très puissants](https://playwright.dev/docs/selectors)
+- Ajoutez cette dépendance sur votre projet
 
-- Vérifier avec [assert](https://nodejs.org/api/assert.html#assert_assert_value_message) que l'URL de la page soit égale à `https://playwright.dev/docs/intro`.
+```shell
+pnpm install @playwright/test
+# OR
+npm install @playwright/test
+# OR
+yarn install @playwright/test
+```
+Les interactions
+Ce package s'appuie sur un fichier de configuration `playwright.config.js` ou `playwright.config.ts`.
 
-- Faire un screenshot de la page dans `screenshots/getting_started.png`.
+- Créer le fichier de configuration `playwright.config.ts`
 
-## La recherche
+```ts
+import type { PlaywrightTestConfig } from '@playwright/test';
 
-- Depuis la page getting started taper le texte `selector` dans la barre de recherche.
+const config: PlaywrightTestConfig = {};
 
-> ℹ️ Playwright propose deux façons de remplir un champ soit en utilisant l'event input avec la méthode [fill](https://playwright.dev/docs/api/class-page/#pagefillselector-value-options) ou encore en simulant la saisie utilisateur avec la méthode [type](https://playwright.dev/docs/api/class-page#pagetypeselector-text-options)
+export default config;
+```
 
-- Attendre que la popup avec le lien "See all results" soit visible
+- En vous appuyant sur [la documentation](https://playwright.dev/docs/test-configuration.), configurez-le de la manière suivante:
+  - Définissez le dossier source des tests pour qu'il soit `./src`
+  - Définissez le dossier de sortie pour qu'il soit `./test-results`
+  - Définissez le nombre de retentative pour qu'il soit de 1 si `process.env.CI` est défini et de 0 sinon
+  - Créer [un projet](https://playwright.dev/docs/test-configuration#multiple-browsers) pour chaque navigateur que l'on souhaite tester `chromium desktiop`, `firefox desktop`, `webkit desktop`, `Pixel 4`
 
-- Appuyer sur le bouton entrer.
+::: tip INFO
+ℹ️ Si vous devez démarrer un server local, playwright peut s'en occuper pour vous avec l'option [`webServer`](https://playwright.dev/docs/api/class-testconfig#test-config-web-server)
 
-- Attendre que le `h1` avec le texte `Selectors` soit visible.
+```ts
+import type { PlaywrightTestConfig } from '@playwright/test';
+const config: PlaywrightTestConfig = {
+  webServer: {
+    command: 'npm run start',
+    port: 3000,
+    timeout: 10000,
+    reuseExistingServer: !process.env.CI,
+  },
+};
+```
 
-- Vérifier avec [assert](https://nodejs.org/api/assert.html#assert_assert_value_message) que l'URL de la page soit égale à `https://playwright.dev/docs/api/class-selectors`.
+:::
 
-- Faire un screenshot de la page dans `screenshots/selectors.png`.
+## Premiers tests
 
-## Le light mode
+Pour commencer, nous allons vérifier le titre de la page.
 
-- Aller le site `https://www.clubic.com` en simulant le mode light
+- Créez un fichier de test `./src/chapter_3.spec.ts`
+- Ajouter un nouveau test et nommez-le `it should have the correct title`
 
-> ℹ️ Playwright propose une API pour [émuler plusieurs choses](https://playwright.dev/docs/emulation)
+```typescript
+import { test, expect } from '@playwright/test';
 
-- Vérifier avec [assert](https://nodejs.org/api/assert.html#assert_assert_value_message) que la balise body du DOM à la classe 'light-mode'
+test('TODO', async ({ page, browser }) => {
+  // TODO
+});
+```
 
-## Le dark mode
+- Naviguez sur `https://playwright.dev/`
+- Vérifiez que le titre est bien identique à `Fast and reliable end-to-end testing for modern web apps | Playwright`, pour cela vous pouvez utiliser la fonction [`expect`](https://playwright.dev/docs/test-assertions) exposée par `@playwright/test` qui étend directement de [jest](https://jestjs.io/)!
 
-- Aller le site `https://www.clubic.com` en simulant le mode dark
+```ts
+expect().toEqual();
+```
 
-- Vérifier avec [assert](https://nodejs.org/api/assert.html#assert_assert_value_message) que la balise body du DOM à la classe 'dark-mode'
+- Lancez vos tests avec la commande `npm run playwright test` et vérifiez qu'ils passent correctement
+
+Playwright permet également de faire du [visual testing](https://playwright.dev/docs/test-snapshots).
+
+- Créer 2 nouveaux tests `it should have the correct screenshot for light mode` et `it should have the correct screenshot for dark mode`
+- Naviguez vers `https://playwright.dev/`
+- Utilisez `await expect(page).toHaveScreenshot( /* options */ );`
+- Lancez vos tests avec la commande `npm run playwright test --update-snapshots` et vérifiez qu'ils génèrent vos snapshots

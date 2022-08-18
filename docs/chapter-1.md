@@ -1,22 +1,24 @@
 # Chapitre 1 - Getting started
 
+🎯 L'objectif ici est de vérifier que tout est correctement installé pour la suite du workshop.
+
 ## Pré-requis
 
-Vous devez avoir [NodeJS](https://nodejs.org/en/) en version 10 ou supérieure, d'installé sur votre poste
+Assurez-vous d'avoir [NodeJS](https://nodejs.org/en/) en version 12 ou supérieure
 
 ```shell
-node -v
+node -v # v12+
 ```
 
 ## Récupération du projet source
 
-- Cloner le repository du codelab
+- Clonez le repository du codelab
 
 ```shell
-git clone https://github.com/mathieumure/handson-playwright.git
+git clone https://github.com/mathieumure/workshop-playwright.git
 ```
 
-- Puis installer les dépendances
+- Puis installez les dépendances
 
 ```shell
 pnpm install
@@ -28,26 +30,30 @@ npm install
 
 ## Installation de playwright
 
-- Installer playwright
+- Installez playwright
 
 ```shell
+pnpm add -D playwright
+# OR
 yarn add -D playwright
 # OR
-npm install --save-dev playwright
+npm install -D playwright
 ```
 
-- Vérifier ensuite qu'il soit bien installé
+- Vérifiez ensuite qu'il soit bien installé
 
 ```shell
+pnpm playwright --version
+# OR
 yarn playwright --version
 # OR
 ./node_modules/.bin/playwright --version
 ```
 
-- Vous devriez obtenir le résultat suivant
+- Vous devriez obtenir un résultat équivalent
 
 ```shell
-Version 1.9.2
+Version 1.25.0
 ```
 
 Bravo 💪 ! Vous êtes maintenant prêt pour faire vos premiers pas avec playwright!
