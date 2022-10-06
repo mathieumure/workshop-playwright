@@ -9,7 +9,7 @@ hero:
   tagline: Vous avez toujours voulu tester rapidement vos features end-to-end ? avec une API très orientée DX ? Disponible sur tous les navigateurs ? Et qui supporte Typescript ? Alors playwright est fait pour vous et c’est ce que vous allez découvrir grâce à ce workshop.
   actions:
     - theme: brand
-      text: C'est parti
+      text: Démarrer
       link: /chapter-1
 ---
 
