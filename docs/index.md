@@ -1,15 +1,14 @@
 ---
 page: true
-title: Workshop 🎭 Playwright
 layout: home
 
 hero:
-  name: Workshop 🎭 Playwright
-  text: le framework end-to-end by Microsoft
-  tagline: Vous avez toujours voulu tester rapidement vos features end-to-end ? avec une API très orientée DX ? Disponible sur tous les navigateurs ? Et qui supporte Typescript ? Alors playwright est fait pour vous et c’est ce que vous allez découvrir grâce à ce workshop.
+  name: "Operation : Playwright 🎭"
+  text: guide de l'aspirant Cypress
+  tagline: Manuel d'utilisation pas à pas de l'opération Playwright, l'outil ultime de Microsoft ?
   actions:
     - theme: brand
-      text: Démarrer
+      text: Démarrer la mission 🛫
       link: /chapter-1
 ---
 

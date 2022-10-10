@@ -1,10 +1,10 @@
-# Chapitre 4 - Les interactions
+# Étape 4 - Usage simple 🔤
 
 🎯 L'objectif ici est de commencer à interagir avec la page.
 
 ## Les boutons
 
-Nous allons cliquer sur le bouton `Getting started` et vérifier que la navigation fonctionne correctement.
+Vous allez cliquer sur le bouton `Getting started` et vérifier que la navigation fonctionne correctement.
 
 - Créez un nouveau fichier de test `src/chapter_4.spec.ts` et ajouter un nouveau test.
 - Naviguez vers `https://playwright.dev/`
@@ -55,3 +55,7 @@ const alogoliaRequestRegex = /^https:\/\/.*.algolia.net\/1\/indexes\/\*\/queries
 - Attendez qu'une navigation ait lieu.
 - Vérifiez avec `expect` que l'URL de la page soit égale à `https://playwright.dev/docs/selectors`.
 
+Nos agents nous informent que la quatrième phrase qui vous permettra de décoder les codes secrets de Microsoft se trouve dans la page des `selectors`.
+Il s'agit du second paragraphe de la page, situé juste avant le titre `Quick guide`.
+
+__Notez-la précieusement__ et vous pouvez passer à la dernière phase du plan, la phase 5 !

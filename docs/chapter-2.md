@@ -1,4 +1,4 @@
-# Chapitre 2 - Les premiers pas
+# Étape 2 - Désassemblage 💥
 
 🎯 L'objectif ici est de découvrir l'API de playwright sans s'occuper des tests.
 
@@ -6,7 +6,7 @@
 
 - Créez un fichier dans `src/chapitre_2.ts`.
 
-- Dans ce fichier, importez playwright et dans une fonction asynchrone, lancer un chromium et stocker l'instance dans une variable [`browser`](https://playwright.dev/docs/api/class-browser)
+- Dans ce fichier, importez playwright et dans une fonction asynchrone, lancez un chromium et stockez l'instance dans une variable [`browser`](https://playwright.dev/docs/api/class-browser)
 
 ```typescript
 const run = async () => {
@@ -16,11 +16,11 @@ const run = async () => {
 run();
 ```
 
-- À partir de ce `browser`, créer une nouvelle page et la stocker dans une variable `page`.
+- À partir de ce `browser`, créez une nouvelle page et stockez-la dans une variable `page`.
 
-- Faire naviguer votre page sur `https://playwright.dev/`.
+- Faites naviguer votre page sur `https://playwright.dev/`.
 
-- Afficher dans le terminal, la valeur du `title` de cette page. Vous devriez obtenir
+- Affichez dans le terminal, la valeur du `title` de cette page. Vous devriez obtenir
 
 ```
 Fast and reliable end-to-end testing for modern web apps | Playwright
@@ -30,27 +30,27 @@ Fast and reliable end-to-end testing for modern web apps | Playwright
 Pensez à fermer vos pages et vos navigateurs, pour que le programme se termine.
 :::
 
-- Lancer votre script avec la commande suivante :
+- Lancez votre script avec la commande suivante :
 
 ```shell
 pnpm ts-node src/chapitre_2.ts
 ```
 
-- Lancer maintenant le navigateur sans mode headless.
+- Modifiez votre script pour lancer le navigateur visuellement, c'est-à-dire sans mode headless.
 
 ## Screenshot
 
-- Faire un [screenshot](https://playwright.dev/docs/screenshots) de la page entière dans `src/screenshots/homepage.png`.
+- Faites un [screenshot](https://playwright.dev/docs/screenshots) de la page entière dans `src/screenshots/homepage.png`.
 
 Vous devriez obtenir ![resultat du screenshot](./assets/chapter2_screenshot.png)
 
-- Configurer votre page pour avoir une préférence pour le dark mode grace à l'API [`emulateMedia`](https://playwright.dev/docs/api/class-page#page-emulate-media) et refaite un screenshot dans `src/screenshots/homepage_dark.png`
+- Configurez votre page pour avoir une préférence pour le dark mode grâce à l'API [`emulateMedia`](https://playwright.dev/docs/api/class-page#page-emulate-media) et refaites un screenshot dans `src/screenshots/homepage_dark.png`
 
 Vous devriez obtenir ![resultat du screenshot en dark mode](./assets/chapter2_screenshot_dark.png)
 
 ## Multi-navigateur
 
-Une des puissances de playwright réside dans son support de `chromium`, `firefox` et `webkit`.
+Une des puissances de playwright réside dans son support de plusieurs navigateurs comme `chromium`, `firefox` et `webkit`.
 
 ::: tip INFO
 Playwright possède également un support expérimental d'[Android](https://playwright.dev/docs/api/class-android/) et d'[Electron](https://playwright.dev/docs/api/class-electron).
@@ -94,3 +94,7 @@ const page = await mobileContext.newPage();
 :::warning ATTENTION
 Les `devices` définissent une propriété `isMobile` qui n'est pas compatible avec `firefox`.
 :::
+
+Nos agents nous informent que la seconde phrase qui vous permettra de décoder les codes secrets de Microsoft est le titre de la page que vous avez affiché dans votre terminal.
+
+__Notez-la précieusement__ et vous pouvez passer à la phase 3 du plan !

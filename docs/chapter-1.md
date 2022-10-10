@@ -1,6 +1,6 @@
-# Chapitre 1 - Getting started
+# Étape 1 - Infiltration 🥷
 
-🎯 L'objectif ici est de vérifier que tout est correctement installé pour la suite du workshop.
+🎯 L'objectif ici est de récupérer l'arme ultime de Microsoft sur notre projet et que tout est correctement installé pour la suite de votre mission.
 
 ## Pré-requis
 
@@ -12,7 +12,7 @@ node -v # v12+
 
 ## Récupération du projet source
 
-- Clonez le repository du codelab
+- Clonez le code source du codelab
 
 ```shell
 git clone https://github.com/mathieumure/workshop-playwright.git
@@ -50,10 +50,8 @@ yarn playwright --version
 ./node_modules/.bin/playwright --version
 ```
 
-- Vous devriez obtenir un résultat équivalent
+- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.27.0`).
 
-```shell
-Version 1.25.0
-```
+Le résultat de cette commande est la première phrase qui vous permettra de décoder les codes secrets de Microsoft. __Notez-la précieusement__.
 
-Bravo 💪 ! Vous êtes maintenant prêt pour faire vos premiers pas avec playwright!
+Bravo 💪 ! Avec cette première phrase, vous êtes maintenant prêt pour passer à la phase 2 du plan !
