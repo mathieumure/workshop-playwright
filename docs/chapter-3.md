@@ -34,7 +34,7 @@ export default config;
   - Définissez le dossier source des tests pour qu'il soit `./src`
   - Définissez le dossier de sortie pour qu'il soit `./test-results`
   - Définissez le nombre de re-tentative pour qu'il soit de 1 si `process.env.CI` est défini et de 0 sinon
-  - Créer [un projet](https://playwright.dev/docs/test-configuration#multiple-browsers) pour chaque navigateur que l'on souhaite tester `chromium desktiop`, `firefox desktop`, `webkit desktop` et `Pixel 4`
+  - Créer [un projet](https://playwright.dev/docs/test-configuration#multiple-browsers) pour chaque navigateur que l'on souhaite tester `chromium desktop`, `firefox desktop`, `webkit desktop` et `Pixel 4`
 
 ::: tip INFO
 ℹ️ Si vous devez démarrer un server local, playwright peut s'en occuper pour vous avec l'option [`webServer`](https://playwright.dev/docs/api/class-testconfig#test-config-web-server)
@@ -75,20 +75,20 @@ test('TODO', async ({ page, browser }) => {
 expect().toEqual();
 ```
 
-- Lancez vos tests avec la commande `npm run playwright test` et vérifiez qu'ils passent correctement
+- Lancez vos tests avec la commande `npm run test:e2e` et vérifiez qu'ils passent correctement
 
 ## Visual testing
 
 Playwright permet également de faire du [visual testing](https://playwright.dev/docs/test-snapshots).
 
-- Créer 2 nouveaux tests `it should have the correct screenshot for light mode` et `it should have the correct screenshot for dark mode`
+- Ajouter dans votre fichier `src/chapter_3.spec.ts`, 2 nouveaux tests `it should have the correct screenshot for light mode` et `it should have the correct screenshot for dark mode`
 - Dans chacun de ces 2 tests, naviguez vers `https://playwright.dev/`
 - Émulez le bon `colorScheme` en fonction du test
 - Utilisez `await expect(page).toHaveScreenshot( /* options */ );` pour faire un screenshot de la page entière.
-- Pour générer la première fois vos images, lancez vos tests avec la commande `npm run playwright test --update-snapshots` et vérifiez qu'ils sont correctement générés.
-- Relancer vos tests normalement et vérifiez qu'ils passent avec la commande `npm run playwright test`
+- Pour générer la première fois vos images, lancez vos tests avec la commande `npm run test:e2e -- --update-snapshots` et vérifiez qu'ils sont correctement générés.
+- Relancer vos tests normalement et vérifiez qu'ils passent avec la commande `npm run test:e2e`
 
-Nos agents nous informent que la troisième phrase qui vous permettra de décoder les codes secrets de Microsoft est contenue dans votre screenshot du mode dark.
+Nos agents nous informent que la troisième phrase qui vous permettra de décoder les codes secrets de Microsoft est contenue dans votre screenshot du mode dark pour chromium desktop.
 Il s'agit de la seconde phrase du premier paragraphe situé sous le titre `No trade-offs • No limits`.
 
 __Notez-la précieusement__ et vous pouvez passer à la phase 4 du plan !

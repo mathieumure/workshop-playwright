@@ -9,6 +9,8 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "fmt": "prettier --write .",
+    "check": "node ./scripts/check-install.js",
+    "test:e2e": "playwright test",
     "lint": "prettier --check ."
   },
   "devDependencies": {

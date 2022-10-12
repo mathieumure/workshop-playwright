@@ -4,9 +4,9 @@
 
 ## Les boutons
 
-Vous allez cliquer sur le bouton `Getting started` et vérifier que la navigation fonctionne correctement.
+Votre objectif va être de cliquer sur le bouton `Getting started` et vérifier que la navigation fonctionne correctement.
 
-- Créez un nouveau fichier de test `src/chapter_4.spec.ts` et ajouter un nouveau test.
+- Créez un nouveau fichier de test `src/chapter_4.spec.ts` et ajoutez un nouveau test `it should click on getting started`.
 - Naviguez vers `https://playwright.dev/`
 - Attendez que le réseau ait terminé de charger grâce à `page.waitForLoadState`.
 
@@ -29,21 +29,22 @@ Vous allez cliquer sur le bouton `Getting started` et vérifier que la navigatio
 :::
 
 - Vérifiez avec `expect` que l'URL de la page soit égale à `https://playwright.dev/docs/intro`.
+- Exécuter votre test uniquement sur chromium avec la commande `npm run test:e2e -- chapter_4 --project "chromium desktop"`
 
 ## La recherche
 
 Nous allons maintenant vérifier que la recherche fonctionne correctement.
 
-- Ajouter un nouveau test
+- Ajouter un nouveau test `it should search for selectors`
 - Naviguez vers `https://playwright.dev/`
-- Depuis la page getting started, cliquez sur la barre de recherche
-- Saisissez le texte `selectors` dans le champ de recherche avec le placeholder `Search docs`. De la popup qui vient de s'afficher.
+- Depuis la page getting started, cliquez sur la barre de recherche, qui possède le text `Search`
+- Saisissez le texte `selectors` dans le champ de recherche qui a le placeholder `Search docs`. Ce champ de recherche est présent dans une popup qui s'affichera après avoir cliqué sur la barre de recherche
 
 ::: tip INFO
 ℹ️ Playwright propose deux façons de remplir un champ soit en utilisant l'event input avec la méthode [fill](https://playwright.dev/docs/api/class-page#page-fill) ou encore en simulant la saisie utilisateur avec la méthode [type](https://playwright.dev/docs/api/class-page#page-type)
 :::
 
-- Attendez que la response d'Algolia, qui devrait répondre à la requête suivante `https://<some-dsn>.algolia.net/1/indexes/*/queries?<some-query-params>`
+- Attendez d'avoir une réponse d'Algolia, qui devrait répondre à la requête suivante `https://<some-dsn>.algolia.net/1/indexes/*/queries?<some-query-params>`
 ::: tip
 Si les expressions régulières ne sont pas votre force :wink:, les requêtes Algolia peuvent être identifiées par
 ```js

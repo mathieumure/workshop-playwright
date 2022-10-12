@@ -4,7 +4,7 @@
 
 ## Se rendre sur playwright dev
 
-- Créez un fichier dans `src/chapitre_2.ts`.
+- Créez un fichier dans `src/chapter_2.ts`.
 
 - Dans ce fichier, importez playwright et dans une fonction asynchrone, lancez un chromium et stockez l'instance dans une variable [`browser`](https://playwright.dev/docs/api/class-browser)
 
@@ -20,7 +20,19 @@ run();
 
 - Faites naviguer votre page sur `https://playwright.dev/`.
 
-- Affichez dans le terminal, la valeur du `title` de cette page. Vous devriez obtenir
+- Affichez dans le terminal, la valeur du `title` de cette page.
+
+- Exécutez votre script
+
+```shell
+pnpm ts-node src/chapter_2.ts
+# OR
+yarn ts-node src/chapter_2.ts
+# OR
+./node_modules/.bin/ts-node src/chapter_2.ts
+```
+
+Vous devriez obtenir
 
 ```
 Fast and reliable end-to-end testing for modern web apps | Playwright
@@ -29,12 +41,6 @@ Fast and reliable end-to-end testing for modern web apps | Playwright
 ::: tip INFO
 Pensez à fermer vos pages et vos navigateurs, pour que le programme se termine.
 :::
-
-- Lancez votre script avec la commande suivante :
-
-```shell
-pnpm ts-node src/chapitre_2.ts
-```
 
 - Modifiez votre script pour lancer le navigateur visuellement, c'est-à-dire sans mode headless.
 
@@ -65,7 +71,7 @@ Promise.all([run('chromium'), run('firefox'), run('webkit')]);
 ```
 
 ::: tip INFO
-Vous pouvez récupérer le nom du navigateur avec la commande
+Vous pouvez récupérer le nom du navigateur avec la commande suivante, ce qui peut vous être utile pour avoir des screenshots par navigateur
 
 ```typescript
 const _browserType = await browser.browserType();
@@ -74,7 +80,7 @@ console.log(_browserType.name()); // firefox, chromium or webkit
 
 :::
 
-- Émuler un navigateur `Pixel 4` préconfiguré grace à [`playwright.devices`](https://playwright.dev/docs/api/class-playwright#playwright-devices)
+- Modifier votre script pour que les tests des différents navigateurs soient fait avec une émulation d'un `Pixel 4`. Pas d'inquiètude, il est déjà préconfiguré grace à [`playwright.devices`](https://playwright.dev/docs/api/class-playwright#playwright-devices)
 
 ```typescript
 import playwright from 'playwright';

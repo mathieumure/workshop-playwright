@@ -1,6 +1,6 @@
 # Étape 1 - Infiltration 🥷
 
-🎯 L'objectif ici est de récupérer l'arme ultime de Microsoft sur notre projet et que tout est correctement installé pour la suite de votre mission.
+🎯 L'objectif ici est de récupérer l'arme ultime de Microsoft et de vérifier que tout est correctement installé pour la suite de votre mission.
 
 ## Pré-requis
 
@@ -43,14 +43,14 @@ npm install -D playwright
 - Vérifiez ensuite qu'il soit bien installé
 
 ```shell
-pnpm playwright --version
+pnpm check
 # OR
-yarn playwright --version
+yarn check
 # OR
-./node_modules/.bin/playwright --version
+npm run check
 ```
 
-- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.27.0`).
+- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.27.1`).
 
 Le résultat de cette commande est la première phrase qui vous permettra de décoder les codes secrets de Microsoft. __Notez-la précieusement__.
 
