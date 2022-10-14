@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {};
 export default config;
 ```
 
-- En vous appuyant sur [la documentation](https://playwright.dev/docs/test-configuration.), configurez-le de la manière suivante :
+- En vous appuyant sur [la documentation](https://playwright.dev/docs/test-configuration), configurez-le de la manière suivante :
   - Définissez le dossier source des tests pour qu'il soit `./src`
   - Définissez le dossier de sortie pour qu'il soit `./test-results`
   - Définissez le nombre de re-tentative pour qu'il soit de 1 si `process.env.CI` est défini et de 0 sinon
