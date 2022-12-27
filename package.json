@@ -10,6 +10,7 @@
     "docs:serve": "vitepress serve docs",
     "fmt": "prettier --write .",
     "check": "node ./scripts/check-install.js",
+    "decode": "node ./scripts/decode.js",
     "test:e2e": "playwright test",
     "lint": "prettier --check ."
   },
