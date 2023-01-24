@@ -22,6 +22,7 @@ export default defineConfig({
           { text: 'Étape 3 - Ré-assemblage 🔧', link: '/chapter-3' },
           { text: 'Étape 4 - Usage simple 🔤', link: '/chapter-4' },
           { text: 'Étape 5 - Usage avancé 🚀', link: '/chapter-5' },
+          { text: 'Étape 6 - Usage assisté 🦾', link: '/chapter-6' },
         ],
       },
     ],

@@ -31,7 +31,7 @@ En vous appuyant sur [la documentation](https://playwright.dev/docs/test-configu
 ```typescript
 const config: PlaywrightTestConfig = {
   testDir: './src',
-}
+};
 ```
 
 </Solution>
@@ -43,7 +43,7 @@ const config: PlaywrightTestConfig = {
 ```typescript
 const config: PlaywrightTestConfig = {
   outputDir: './test-results',
-}
+};
 ```
 
 </Solution>
@@ -55,7 +55,7 @@ const config: PlaywrightTestConfig = {
 ```typescript
 const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 1 : 0,
-}
+};
 ```
 
 </Solution>
@@ -89,7 +89,7 @@ const config: PlaywrightTestConfig = {
       },
     },
   ],
-}
+};
 ```
 
 </Solution>
@@ -125,7 +125,7 @@ Editez le test nommé `it should have the correct title`:
 
 ```typescript
 test('it should have the correct title', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright.dev/');
 });
 ```
 
@@ -142,7 +142,6 @@ await expect(page).toHaveTitle('Fast and reliable end-to-end testing for modern 
 ```
 
 </Solution>
-
 
 - Lancez vos tests e2e via la CLI `playwright test` ou plus simplement via le script `test:e2e` et vérifiez qu'ils passent correctement
 
@@ -164,13 +163,12 @@ Playwright permet également de faire du [visual testing](https://playwright.dev
 
 ```typescript
 test('it should have the correct screenshot for light mode', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright.dev/');
 });
 
 test('it should have the correct screenshot for dark mode', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright.dev/');
 });
-
 ```
 
 </Solution>
@@ -185,7 +183,6 @@ await page.emulateMedia({ colorScheme: 'light' });
 ```
 
 </Solution>
-
 
 - Utilisez `await expect(page).toHaveScreenshot( /* options */ );` pour faire un screenshot de la page entière.
 
@@ -203,4 +200,4 @@ await expect(page).toHaveScreenshot({ fullPage: true });
 Nos agents nous informent que la troisième phrase qui vous permettra de décoder les codes secrets de Microsoft est contenue dans votre screenshot du mode dark pour chromium desktop.
 Il s'agit de la seconde phrase du premier paragraphe situé sous le titre `No trade-offs • No limits`.
 
-__Notez-la précieusement__ dans `src/passphrases.txt` et vous pouvez passer à la phase 4 du plan !
+**Notez-la précieusement** dans `src/passphrases.txt` et vous pouvez passer à la phase 4 du plan !

@@ -52,6 +52,6 @@ npm run check
 
 - Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.29.1`).
 
-Le résultat de cette commande est la première phrase qui vous permettra de décoder les codes secrets de Microsoft. __Notez-la précieusement__ dans `src/passphrases.txt`.
+Le résultat de cette commande est la première phrase qui vous permettra de décoder les codes secrets de Microsoft. **Notez-la précieusement** dans `src/passphrases.txt`.
 
 Bravo 💪 ! Avec cette première phrase, vous êtes maintenant prêt pour passer à la phase 2 du plan !

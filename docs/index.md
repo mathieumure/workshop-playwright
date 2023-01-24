@@ -3,7 +3,7 @@ page: true
 layout: home
 
 hero:
-  name: "Operation : Playwright 🎭"
+  name: 'Operation : Playwright 🎭'
   text: guide de l'aspirant Cypress
   tagline: Manuel d'utilisation pas à pas de l'opération Playwright, l'outil ultime de Microsoft ?
   actions:

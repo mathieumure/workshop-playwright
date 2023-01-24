@@ -12,6 +12,7 @@ Ouvrez le fichier de test `src/chapter_4.spec.ts` et éditez le test intitulé `
 
 ::: tip INFO
 ℹ️ Playwright a un système d'attente assez développé pour la [disponibilité d'un élement](https://playwright.dev/docs/actionability) mais il dispose également d'API pour attendre certains états :
+
 - [`waitForFunction`](https://playwright.dev/docs/api/class-page#page-wait-for-function)
 - [`waitForLoadState`](https://playwright.dev/docs/api/class-page#page-wait-for-load-state)
 - [`waitForNavigation`](https://playwright.dev/docs/api/class-page#page-wait-for-navigation)
@@ -20,15 +21,12 @@ Ouvrez le fichier de test `src/chapter_4.spec.ts` et éditez le test intitulé `
 - [`waitForSelector`](https://playwright.dev/docs/api/class-page#page-wait-for-selector)
 - [`waitForTimeout`](https://playwright.dev/docs/api/class-page#page-wait-for-timeout)
 - [`waitForURL`](https://playwright.dev/docs/api/class-page#page-wait-for-url)
-:::
+  :::
 
 <Solution>
 
 ```typescript
-await Promise.all([
-    page.goto('https://playwright.dev/'),
-    page.waitForLoadState('networkidle')
-]);
+await Promise.all([page.goto('https://playwright.dev/'), page.waitForLoadState('networkidle')]);
 ```
 
 </Solution>
@@ -42,10 +40,7 @@ await Promise.all([
 <Solution>
 
 ```typescript
-await Promise.all([
-    page.getByText('Get started').click(),
-    page.waitForNavigation()
-]);
+await Promise.all([page.getByText('Get started').click(), page.waitForNavigation()]);
 ```
 
 </Solution>
@@ -61,6 +56,7 @@ await expect(page).toHaveURL('https://playwright.dev/docs/intro');
 </Solution>
 
 - Exécuter votre test uniquement sur chromium
+
 ```shell
 pnpm test:e2e -- chapter_4 --project "chromium"
 # OR
@@ -80,14 +76,10 @@ Editez le test intitulé `it should search for locators`:
 <Solution>
 
 ```typescript
-await Promise.all([
-    page.goto('https://playwright.dev/'),
-    page.waitForLoadState('networkidle')
-]);
+await Promise.all([page.goto('https://playwright.dev/'), page.waitForLoadState('networkidle')]);
 ```
 
 </Solution>
-
 
 - Depuis la page getting started, cliquez sur la barre de recherche qui possède le text `Search`
 
@@ -108,25 +100,27 @@ await page.getByText('Search').click();
 <Solution>
 
 ```typescript
-await page.getByPlaceholder('Search docs').fill('locators')
+await page.getByPlaceholder('Search docs').fill('locators');
 ```
 
 </Solution>
 
 - Attendez d'avoir une réponse d'Algolia, qui devrait répondre à la requête suivante `https://<some-dsn>.algolia.net/1/indexes/*/queries?<some-query-params>`
-::: tip
-Si les expressions régulières ne sont pas votre force :wink:, les requêtes Algolia peuvent être identifiées par
+  ::: tip
+  Si les expressions régulières ne sont pas votre force :wink:, les requêtes Algolia peuvent être identifiées par
+
 ```js
-const alogoliaRequestRegex = /^https:\/\/.*.algolia.net\/1\/indexes\/\*\/queries\?/
+const alogoliaRequestRegex = /^https:\/\/.*.algolia.net\/1\/indexes\/\*\/queries\?/;
 ```
+
 :::
 
 <Solution>
 
 ```typescript
 await Promise.all([
-    page.getByPlaceholder('Search docs').fill('locators'),
-    page.waitForResponse(/^https:\/\/.*.algolia.net\/1\/indexes\/\*\/queries\?/),
+  page.getByPlaceholder('Search docs').fill('locators'),
+  page.waitForResponse(/^https:\/\/.*.algolia.net\/1\/indexes\/\*\/queries\?/),
 ]);
 ```
 
@@ -137,10 +131,7 @@ await Promise.all([
 <Solution>
 
 ```typescript
-await Promise.all([
-    page.keyboard.press('Enter'),
-    page.waitForNavigation()
-]);
+await Promise.all([page.keyboard.press('Enter'), page.waitForNavigation()]);
 ```
 
 </Solution>
@@ -158,4 +149,4 @@ await expect(page).toHaveURL('https://playwright.dev/docs/locators');
 Nos agents nous informent que la quatrième phrase qui vous permettra de décoder les codes secrets de Microsoft se trouve dans la page des `locators`.
 Il s'agit de la dernière phrase située juste avant le titre `More Locators`.
 
-__Notez-la précieusement__ dans `src/passphrases.txt` et vous pouvez passer à la dernière phase du plan, la phase 5 !
+**Notez-la précieusement** dans `src/passphrases.txt` et vous pouvez passer à la dernière phase du plan, la phase 5 !

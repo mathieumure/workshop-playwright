@@ -1,11 +1,11 @@
 details {
-    border-radius: 8px;
-    background-color: #090a0a;
-    color: white;
+  border-radius: 8px;
+  background-color: #090a0a;
+  color: white;
 }
 
 summary {
-    color: #A6ACCD;
-    padding-top: 12px;
-    padding-left: 16px;
+  color: #a6accd;
+  padding-top: 12px;
+  padding-left: 16px;
 }

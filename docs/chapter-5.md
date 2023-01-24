@@ -92,7 +92,7 @@ await expect(page).toHaveScreenshot();
 
 </Solution>
 
-__Notez précieusement__ dans `src/passphrases.txt` la passphrase ainsi que le key code.
+**Notez précieusement** dans `src/passphrases.txt` la passphrase ainsi que le key code.
 
 Bravo ! Vous avez réussi à récupérer l'ensemble des passphrases et des codes ! Il est maintenant tant de déchiffrer tout cela
 
@@ -105,3 +105,5 @@ Par exemple, si la clé est `3 4 1+2 3 2`, alors la phrase secrète sera :
 `<le 3ème mot de la phrase de la phase 1> <le 4ème mot de la phrase de la phase 2> <le 1er et le 2nd mot de la phrase de la phase 3> <le 3ème mot de la phrase de la phase 4> <le 2nd mot de la phrase de la phase 5>`
 
 Décoder le tout à main pour trouver les codes secrets de Microsoft!... ou lancer simplement le script `npm run decode`
+
+Vous avez maintenant accès à toute la puissance de playwright et c'est ce que nous allons faire dans la dernière phase du plan, la phase 6!

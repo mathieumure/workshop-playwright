@@ -14,11 +14,12 @@
 import playwright from 'playwright';
 
 const run = async () => {
-    const browser = await playwright.chromium.launch();
+  const browser = await playwright.chromium.launch();
 };
 
 run();
 ```
+
 </Solution>
 
 - À partir de ce `browser`, créez une nouvelle page et stockez-la dans une variable `page`.
@@ -28,6 +29,7 @@ run();
 ```typescript
 const page = await browser.newPage();
 ```
+
 </Solution>
 
 - Faites naviguer votre page sur `https://playwright.dev/`.
@@ -37,6 +39,7 @@ const page = await browser.newPage();
 ```typescript
 await page.goto('https://playwright.dev/');
 ```
+
 </Solution>
 
 - Affichez dans le terminal, la valeur du `title` de cette page.
@@ -46,6 +49,7 @@ await page.goto('https://playwright.dev/');
 ```typescript
 console.log(await page.title());
 ```
+
 </Solution>
 
 - Fermez le navigateur pour que le programme se termine
@@ -55,6 +59,7 @@ console.log(await page.title());
 ```typescript
 await browser.close();
 ```
+
 </Solution>
 
 - Exécutez votre script
@@ -83,9 +88,10 @@ Pensez à fermer vos pages et vos navigateurs, pour que le programme se termine.
 
 ```typescript
 const browser = await playwright.chromium.launch({
-    headless: false,
+  headless: false,
 });
 ```
+
 </Solution>
 
 ## Screenshot
@@ -96,10 +102,11 @@ const browser = await playwright.chromium.launch({
 
 ```typescript
 await page.screenshot({
-    path: `src/screenshot/homepage.png`,
-    fullPage: true,
+  path: `src/screenshot/homepage.png`,
+  fullPage: true,
 });
 ```
+
 </Solution>
 
 <Solution title="Résultat attendu">
@@ -114,15 +121,15 @@ await page.screenshot({
 
 ```typescript
 await page.emulateMedia({
-    colorScheme: 'dark',
+  colorScheme: 'dark',
 });
 
 await page.screenshot({
-    path: `src/screenshot/homepage_dark.png`,
-    fullPage: true,
+  path: `src/screenshot/homepage_dark.png`,
+  fullPage: true,
 });
-
 ```
+
 </Solution>
 
 <Solution title="Résultat attendu">
@@ -130,7 +137,7 @@ await page.screenshot({
 ![resultat du screenshot en dark mode](./assets/chapter2_screenshot_dark.png)
 
 </Solution>
- 
+
 
 ## Multi-navigateur
 
@@ -155,27 +162,27 @@ const browserTypeName = (await browser.browserType()).name();
 
 ```typescript
 const run = async (browserType: 'firefox' | 'chromium') => {
-    const browser = await playwright[browserType].launch();
-    const browserTypeName = (await browser.browserType()).name();
-}
+  const browser = await playwright[browserType].launch();
+  const browserTypeName = (await browser.browserType()).name();
+};
 Promise.all([run('chromium'), run('firefox')]);
 ```
 
 </Solution>
 
-- Mettez à jour les path des screenshots pour qu'ils incluent le type de device 
+- Mettez à jour les path des screenshots pour qu'ils incluent le type de device
 
 <Solution>
 
 ```typescript
 await page.screenshot({
-    path: `src/screenshot/${browserType}_homepage.png`,
-    fullPage: true,
+  path: `src/screenshot/${browserType}_homepage.png`,
+  fullPage: true,
 });
 
 await page.screenshot({
-    path: `src/screenshot/${browserType}_homepage_dark.png`,
-    fullPage: true,
+  path: `src/screenshot/${browserType}_homepage_dark.png`,
+  fullPage: true,
 });
 ```
 
@@ -202,7 +209,6 @@ const page = await mobileContext.newPage();
 
 </Solution>
 
-
 Nos agents nous informent que la seconde phrase qui vous permettra de décoder les codes secrets de Microsoft est le titre de la page que vous avez affiché dans votre terminal.
 
-__Notez-la précieusement__ dans `src/passphrases.txt` et vous pouvez passer à la phase 3 du plan !
+**Notez-la précieusement** dans `src/passphrases.txt` et vous pouvez passer à la phase 3 du plan !
