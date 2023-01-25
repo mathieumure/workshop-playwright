@@ -67,7 +67,7 @@ await page.getByText('Connect').click();
 <Solution>
 
 ```typescript
-await page.waitForNavigation({ url: /^https:\/\/workshop-playwright-server\.vercel\.app/ });
+await page.waitForUrl(/^https:\/\/workshop-playwright-server\.vercel\.app/);
 ```
 
 </Solution>

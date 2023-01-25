@@ -91,7 +91,7 @@ await page.getByText('Search').click();
 
 </Solution>
 
-- Saisissez le texte `selectors` dans le champ de recherche qui a le placeholder `Search docs`. Ce champ de recherche est présent dans une popup qui s'affichera après avoir cliqué sur la barre de recherche
+- Saisissez le texte `locators` dans le champ de recherche qui a le placeholder `Search docs`. Ce champ de recherche est présent dans une popup qui s'affichera après avoir cliqué sur la barre de recherche
 
 ::: tip INFO
 ℹ️ Playwright propose deux façons de remplir un champ soit en utilisant l'event input avec la méthode [fill](https://playwright.dev/docs/api/class-page#page-fill) ou encore en simulant la saisie utilisateur avec la méthode [type](https://playwright.dev/docs/api/class-page#page-type)
@@ -136,7 +136,7 @@ await Promise.all([page.keyboard.press('Enter'), page.waitForNavigation()]);
 
 </Solution>
 
-- Vérifiez avec `expect` que l'URL de la page soit égale à `https://playwright.dev/docs/selectors`.
+- Vérifiez avec `expect` que l'URL de la page soit égale à `https://playwright.dev/docs/locators`.
 
 <Solution>
 

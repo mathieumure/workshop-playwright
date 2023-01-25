@@ -138,7 +138,6 @@ await page.screenshot({
 
 </Solution>
 
-
 ## Multi-navigateur
 
 Une des puissances de playwright réside dans son support de plusieurs navigateurs comme `chromium`, `firefox` et `webkit`.
