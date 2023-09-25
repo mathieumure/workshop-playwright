@@ -30,6 +30,7 @@ lerna-debug.log*
 
 # dist
 vitepress
+docs/.vitepress/cache
 
 # e2e
 /test-results/

@@ -40,6 +40,25 @@ yarn add -D playwright
 npm install -D playwright
 ```
 
+Nous allons utiliser chromium & firefox pour ce workshop. Il faut donc demander à playwright de les installer
+
+```shell
+pnpm playwright install chromium firefox
+# OR
+yarn playwright install chromium firefox
+# OR
+npx playwright install chromium firefox
+```
+
+::: tip INFO
+La force de Playwright est notamment de pouvoir supporter plusieurs navigateurs comme chromium, chrome, edge, firefox ou webkit. Si vous voulez tous les installer en une seule commande lancer uniquelement la commande install sans paramètre.
+
+```
+pnpm playwright install
+```
+
+:::
+
 - Vérifiez ensuite qu'il soit bien installé
 
 ```shell
