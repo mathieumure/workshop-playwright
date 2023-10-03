@@ -7,7 +7,7 @@
 Assurez-vous d'avoir [NodeJS](https://nodejs.org/en/) en version 12 ou supérieure
 
 ```shell
-node -v # v12+
+node -v # v16+
 ```
 
 ## Récupération du projet source
