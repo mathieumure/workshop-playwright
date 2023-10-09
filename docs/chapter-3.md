@@ -11,18 +11,18 @@ Pour cela, Playwright met à disposition un package dédié `@playwright/test`.
 - Ajoutez cette dépendance sur votre projet
 
 ```shell
-pnpm install @playwright/test
+pnpm install -D @playwright/test
 # OR
-npm install @playwright/test
+npm install -D @playwright/test
 # OR
-yarn install @playwright/test
+yarn install -D @playwright/test
 ```
 
 Ce package s'appuie sur un fichier de configuration `playwright.config.js` ou `playwright.config.ts`.
 
 - Ouvrer le fichier de configuration `playwright.config.ts` situé à la racine du projet.
 
-En vous appuyant sur [la documentation](https://playwright.dev/docs/test-configuration), configurez-le de la manière suivante:
+En vous appuyant sur [la documentation](https://playwright.dev/docs/test-configuration), configurez-le de la manière suivante :
 
 - Définissez le dossier source des tests pour qu'il soit `./src`
 
@@ -119,38 +119,38 @@ Pour commencer, nous allons vérifier que le titre de la page est correct.
 
 Editez le test nommé `it should have the correct title`:
 
-- Naviguez sur `https://playwright.dev/`
+- Naviguez sur `https://playwright-site-madd.vercel.app/`
 
 <Solution>
 
 ```typescript
 test('it should have the correct title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright-site-madd.vercel.app/');
 });
 ```
 
 </Solution>
 
-- Vérifiez que le titre est bien identique à `Fast and reliable end-to-end testing for modern web apps | Playwright`, pour cela vous pouvez utiliser la fonction [`expect`](https://playwright.dev/docs/test-assertions) exposée par `@playwright/test` qui étend directement de [jest](https://jestjs.io/)!
+- Vérifiez que le titre est bien identique à `Welcome to the official website of Microsoft's Advanced Defense Division (MADD).`, pour cela, vous pouvez utiliser la fonction [`expect`](https://playwright.dev/docs/test-assertions) exposée par `@playwright/test` qui étend directement de [jest](https://jestjs.io/)!
 
 <Solution>
 
 ```typescript
-expect(await page.title()).toEqual('Fast and reliable end-to-end testing for modern web apps | Playwright');
+expect(await page.title()).toEqual("Welcome to the official website of Microsoft's Advanced Defense Division (MADD).");
 // or shorten
-await expect(page).toHaveTitle('Fast and reliable end-to-end testing for modern web apps | Playwright');
+await expect(page).toHaveTitle("Welcome to the official website of Microsoft's Advanced Defense Division (MADD).");
 ```
 
 </Solution>
 
-- Lancez vos tests e2e via la CLI `playwright test` ou plus simplement via le script `test:e2e` et vérifiez qu'ils passent correctement
+- Lancez vos tests e2e via la CLI `playwright test` et vérifiez qu'ils passent correctement
 
 ```shell
-pnpm test:e2e
+pnpm playwright test
 # OR
-yarn test:e2e
+yarn playwright test
 # OR
-npm run test:e2e
+./node_modules/.bin/playwright test
 ```
 
 ## Visual testing
@@ -163,11 +163,11 @@ Playwright permet également de faire du [visual testing](https://playwright.dev
 
 ```typescript
 test('it should have the correct screenshot for light mode', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright-site-madd.vercel.app/');
 });
 
 test('it should have the correct screenshot for dark mode', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://playwright-site-madd.vercel.app/');
 });
 ```
 
@@ -194,8 +194,8 @@ await expect(page).toHaveScreenshot({ fullPage: true });
 
 </Solution>
 
-- Pour générer la première fois vos images, lancez vos tests avec la commande `npm run test:e2e -- --update-snapshots` et vérifiez qu'ils sont correctement générés.
-- Relancer vos tests normalement et vérifiez qu'ils passent avec la commande `npm run test:e2e`
+- Pour générer la première fois vos images, lancez vos tests avec la commande `pnpm playwright test --update-snapshots` et vérifiez qu'ils sont correctement générés.
+- Relancer vos tests normalement et vérifiez qu'ils passent avec la commande `pnpm playwright test`
 
 Nos agents nous informent que la troisième phrase qui vous permettra de décoder les codes secrets de Microsoft est contenue dans votre screenshot du mode dark pour chromium desktop.
 Il s'agit de la seconde phrase du premier paragraphe situé sous le titre `No trade-offs • No limits`.

@@ -1,5 +1,9 @@
 # Étape 2 - Désassemblage 💥
 
+Notre service de renseignement vient de trouver [l'origine des activités](https://playwright-site-madd.vercel.app/) de nos enemies !
+
+Votre mission, si vous l'acceptez, est de retourner son arme contre lui.
+
 🎯 L'objectif ici est de découvrir l'API de playwright sans s'occuper des tests.
 
 ## Se rendre sur playwright dev
@@ -32,12 +36,12 @@ const page = await browser.newPage();
 
 </Solution>
 
-- Faites naviguer votre page sur `https://playwright.dev/`.
+- Faites naviguer votre page sur `https://playwright-site-madd.vercel.app/`.
 
 <Solution>
 
 ```typescript
-await page.goto('https://playwright.dev/');
+await page.goto('https://playwright-site-madd.vercel.app/');
 ```
 
 </Solution>
@@ -65,17 +69,17 @@ await browser.close();
 - Exécutez votre script
 
 ```shell
-pnpm ts-node src/chapter_2.ts
+pnpm ts-node-esm src/chapter_2.ts
 # OR
-yarn ts-node src/chapter_2.ts
+yarn ts-node-esm src/chapter_2.ts
 # OR
-./node_modules/.bin/ts-node src/chapter_2.ts
+./node_modules/.bin/ts-node-esm src/chapter_2.ts
 ```
 
 Vous devriez obtenir
 
 ```
-Fast and reliable end-to-end testing for modern web apps | Playwright
+Welcome to the official website of Microsoft's Advanced Defense Division (MADD).
 ```
 
 ::: tip INFO
@@ -162,7 +166,6 @@ const browserTypeName = (await browser.browserType()).name();
 ```typescript
 const run = async (browserType: 'firefox' | 'chromium') => {
   const browser = await playwright[browserType].launch();
-  const browserTypeName = (await browser.browserType()).name();
 };
 Promise.all([run('chromium'), run('firefox')]);
 ```

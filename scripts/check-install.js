@@ -1,5 +1,6 @@
-const { exec } = require('node:child_process');
-const path = require('path');
+import {exec} from "node:child_process";
+
+import path from "path";
 
 const versionRegEx = /Version (?<version>.*)/;
 

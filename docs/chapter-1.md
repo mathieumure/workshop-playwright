@@ -47,7 +47,7 @@ pnpm playwright install chromium firefox
 # OR
 yarn playwright install chromium firefox
 # OR
-npx playwright install chromium firefox
+./node_modules/.bin/playwright install chromium firefox
 ```
 
 ::: tip INFO

@@ -4,13 +4,13 @@
 
 ## Simulation d'un formulaire
 
-Nos agents nous informent que la dernière pass-phrase et le code de décryptage sont protégés derrière un formulaire de login accessible via l'URL [https://workshop-playwright-server.vercel.app/](https://workshop-playwright-server.vercel.app/).
+Nos agents nous informent que la dernière pass-phrase et le code de décryptage sont protégés derrière un formulaire caché accessible via l'URL [https://playwright-site-madd.vercel.app/_wpftw_/bluescreenofthedeath](https://playwright-site-madd.vercel.app/_wpftw_/bluescreenofthedeath).
 
-Nous n'avons pas réussi à obtenir un login et un password, mais ils ont trouvé un jeton magique.
+Malheureusement, nous avons dû exfiltrer l'agent qui n'a pas réussi à obtenir un login et un password, mais a obtenu un jeton magique.
 
-Afin d'éviter tout soupçon de la part de leur système, vous devez être invisibles pour cela vous allez utilisez les [route](https://playwright.dev/docs/api/class-route) playwright.
+Afin d'éviter tout soupçon de la part de leur système, vous devez être invisibles ! Pour cela, vous allez utiliser les [route](https://playwright.dev/docs/api/class-route) playwright.
 
-Editez le fichier de test `src/chapter_5.spec.ts`:
+Éditez le fichier de test `src/chapter_5.spec.ts`:
 
 - Dans le hook `test.beforeEach`, qui est exécuté avant chaque test, ajoutez une [route](https://playwright.dev/docs/api/class-route) playwright sur `https://accounts.google.com/ServiceLogin/webreauth`. Elle devra faire une redirection 302 qui ajoutera le query param `token=<3WindowsVista<3`
 
@@ -22,7 +22,7 @@ test.beforeEach(async ({ page }) => {
     route.fulfill({
       status: 302,
       headers: {
-        Location: 'https://workshop-playwright-server.vercel.app?token=<3WindowsVista<3',
+        Location: 'https://playwright-site-madd.vercel.app/_wpftw_/bluescreenofthedeath?token=<3WindowsVista<3',
       },
     });
   });
@@ -31,12 +31,12 @@ test.beforeEach(async ({ page }) => {
 
 </Solution>
 
-- Dans le test nommé `it should get the last secret phrase`, naviguez vers `https://workshop-playwright-server.vercel.app/`
+- Dans le test nommé `it should get the last secret phrase`, naviguez vers `https://playwright-site-madd.vercel.app/_wpftw_/bluescreenofthedeath`
 
 <Solution>
 
 ```typescript
-await page.goto('https://workshop-playwright-server.vercel.app');
+await page.goto('https://playwright-site-madd.vercel.app/_wpftw_/bluescreenofthedeath');
 ```
 
 </Solution>
@@ -62,12 +62,12 @@ await page.getByText('Connect').click();
 
 </Solution>
 
-- Attendez qu'une navigation ait lieu sur `https://workshop-playwright-server.vercel.app/`
+- Attendez qu'une navigation ait lieu sur `https://playwright-site-madd.vercel.app/_wpftw_/bluescreenofthedeath`
 
 <Solution>
 
 ```typescript
-await page.waitForUrl(/^https:\/\/workshop-playwright-server\.vercel\.app/);
+await page.waitForURL(/^https:\/\/playwright-site-madd.vercel.app\/_wpftw_\/bluescreenofthedeath/);
 ```
 
 </Solution>
