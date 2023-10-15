@@ -79,7 +79,7 @@ yarn ts-node-esm src/chapter_2.ts
 Vous devriez obtenir
 
 ```
-Welcome to the official website of Microsoft's Advanced Defense Division (MADD).
+Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology
 ```
 
 ::: tip INFO

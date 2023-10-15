@@ -159,6 +159,6 @@ await expect(page.locator('h1')).toHaveText('Agent Pikachu');
 </Solution>
 
 Nos agents nous informent que la quatrième phrase qui vous permettra de décoder les codes secrets de Microsoft se trouve dans la page de l'agent `Pikachu`.
-Il s'agit de sa mission actuelle.
+Il s'agit de son statut actuel.
 
 **Notez-la précieusement** dans `src/passphrases.txt` et vous pouvez passer à la dernière phase du plan, la phase 5 !

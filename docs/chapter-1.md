@@ -4,7 +4,7 @@
 
 ## Pré-requis
 
-Assurez-vous d'avoir [NodeJS](https://nodejs.org/en/) en version 12 ou supérieure
+Assurez-vous d'avoir [NodeJS](https://nodejs.org/en/) en version 16 ou supérieure
 
 ```shell
 node -v # v16+
@@ -59,7 +59,7 @@ pnpm playwright install
 
 :::
 
-- Vérifiez ensuite qu'il soit bien installé
+- Vérifiez ensuite que tous soient bien installés
 
 ```shell
 pnpm check
@@ -69,7 +69,7 @@ yarn check
 npm run check
 ```
 
-- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.29.1`).
+- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.39.0`).
 
 Le résultat de cette commande est la première phrase qui vous permettra de décoder les codes secrets de Microsoft. **Notez-la précieusement** dans `src/passphrases.txt`.
 

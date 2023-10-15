@@ -92,7 +92,7 @@ await expect(page).toHaveScreenshot();
 
 </Solution>
 
-**Notez précieusement** dans `src/passphrases.txt` la passphrase ainsi que le key code.
+**Notez précieusement** dans `src/passphrases.txt` le titre de la page ainsi que le key code.
 
 Bravo ! Vous avez réussi à récupérer l'ensemble des passphrases et des codes ! Il est maintenant tant de déchiffrer tout cela
 

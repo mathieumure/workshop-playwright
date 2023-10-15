@@ -131,14 +131,14 @@ test('it should have the correct title', async ({ page }) => {
 
 </Solution>
 
-- Vérifiez que le titre est bien identique à `Welcome to the official website of Microsoft's Advanced Defense Division (MADD).`, pour cela, vous pouvez utiliser la fonction [`expect`](https://playwright.dev/docs/test-assertions) exposée par `@playwright/test` qui étend directement de [jest](https://jestjs.io/)!
+- Vérifiez que le titre est bien identique à `Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology`, pour cela, vous pouvez utiliser la fonction [`expect`](https://playwright.dev/docs/test-assertions) exposée par `@playwright/test` qui étend directement de [jest](https://jestjs.io/)!
 
 <Solution>
 
 ```typescript
-expect(await page.title()).toEqual("Welcome to the official website of Microsoft's Advanced Defense Division (MADD).");
+expect(await page.title()).toEqual("Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology");
 // or shorten
-await expect(page).toHaveTitle("Welcome to the official website of Microsoft's Advanced Defense Division (MADD).");
+await expect(page).toHaveTitle("Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology");
 ```
 
 </Solution>
@@ -198,6 +198,6 @@ await expect(page).toHaveScreenshot({ fullPage: true });
 - Relancer vos tests normalement et vérifiez qu'ils passent avec la commande `pnpm playwright test`
 
 Nos agents nous informent que la troisième phrase qui vous permettra de décoder les codes secrets de Microsoft est contenue dans votre screenshot du mode dark pour chromium desktop.
-Il s'agit de la seconde phrase du premier paragraphe situé sous le titre `No trade-offs • No limits`.
+Il s'agit de la seconde phrase du premier paragraphe situé sous le titre `Commitment to Global Security`.
 
 **Notez-la précieusement** dans `src/passphrases.txt` et vous pouvez passer à la phase 4 du plan !
