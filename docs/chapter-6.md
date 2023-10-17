@@ -21,7 +21,7 @@ Effectuez les actions suivantes pour lancer l'auto génération de code
 - Naviguez vers https://playwright-site-madd.vercel.app/
 - Cliquez sur le bouton contenant le texte `Getting started with Playwright`.
 - Cliquez la recherche
-- Cherchez l'agent mystère résolu grâce à vos passphrase dans la pop-in qui vient de s'ouvrir et appuyer sur entrée
+- Cherchez l'agent mystère, résolu grâce à vos passphrases, dans la pop-in qui vient de s'ouvrir et appuyer sur entrée
 - Cliquez sur le nom de code de l'agent
 
 <Solution>
