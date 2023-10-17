@@ -4,7 +4,7 @@
 
 ## Génération avec codegen
 
-Cette fois-ci nous allons utiliser le codegen de playwright pour nous aider à créer nos fichiers de test.
+Cette fois-ci, nous allons utiliser le codegen de playwright pour nous aider à créer nos fichiers de test.
 
 - Lancer le codegen avec la commande suivante :
 
@@ -21,7 +21,8 @@ Effectuez les actions suivantes pour lancer l'auto génération de code
 - Naviguez vers https://playwright-site-madd.vercel.app/
 - Cliquez sur le bouton contenant le texte `Getting started with Playwright`.
 - Cliquez la recherche
-- Cherchez `Agent Mario` dans la pop-in qui vient de s'ouvrir et appuyer sur entrée
+- Cherchez l'agent mystère résolu grâce à vos passphrase dans la pop-in qui vient de s'ouvrir et appuyer sur entrée
+- Cliquez sur le nom de code de l'agent
 
 <Solution>
 
@@ -32,8 +33,9 @@ test('test', async ({ page }) => {
     await page.goto('https://playwright-site-madd.vercel.app/');
     await page.getByRole('link', { name: 'Getting Started with Playwright' }).click();
     await page.getByLabel('Search').click();
-    await page.getByPlaceholder('Search agents').fill('agent mario');
-    await page.getByPlaceholder('Search agents').press('Enter');
+    await page.getByPlaceholder('Search agents').fill('agent x');
+    await page.getByRole('link', { name: 'Agent X' }).click();
+    await page.getByRole('button', { name: 'X' }).click();
 });
 ```
 
@@ -43,7 +45,7 @@ test('test', async ({ page }) => {
 
 ## Visualiser avec Trace Viewer
 
-Nous allons maintenant utiliser les traces pour nous aider à debugger avec toute la puissance de playwright.
+Nous allons maintenant utiliser les traces pour nous aider à debugger avec toute la puissance de playwright (et aussi afficher publiquement cet agent mystère).
 
 Pour cela, lancez les tests avec les traces activées,
 
@@ -66,3 +68,9 @@ yarn playwright show-trace <PATH_TO_YOUR_ZIP_FILE>
 ```
 
 - Exécutez-les pas à pas dans l'interface qui vient de s'ouvrir
+
+Bravo ! vous avez réussi avec succès à trouver le secret de Microsoft !
+
+Maintenant, allez-vous révéler la véritable apparence de cet agent mystère ou alors, allez-vous rejoindre les rangs de Playwright ?
+
+N'hésitez pas à afficher votre choix sur ... [X](https://twitter.com/) :wink:
