@@ -198,6 +198,6 @@ await expect(page).toHaveScreenshot({ fullPage: true });
 - Relancer vos tests normalement et vérifiez qu'ils passent avec la commande `pnpm playwright test`
 
 Nos agents nous informent que la troisième phrase qui vous permettra de décoder les codes secrets de Microsoft est contenue dans votre screenshot du mode dark pour chromium desktop.
-Il s'agit de la seconde phrase du premier paragraphe situé sous le titre `Commitment to Global Security`.
+Il s'agit du paragraphe situé sous le titre `Commitment to Global Security`.
 
 **Notez-la précieusement** dans `src/passphrases.txt` et vous pouvez passer à la phase 4 du plan !

@@ -72,12 +72,12 @@ await page.waitForURL(/^https:\/\/playwright-site-madd.vercel.app\/_wpftw_\/blue
 
 </Solution>
 
-- Vérifiez que le titre sur la page rendue est bien `You're in Microsoft deep secrets page`
+- Vérifiez que le titre sur la page rendue est bien `Your agent page is now unlocked`
 
 <Solution>
 
 ```typescript
-await expect(page.getByRole('heading')).toHaveText("You're in Microsoft deep secrets page");
+await expect(page.getByRole('heading')).toHaveText("Your agent page is now unlocked");
 ```
 
 </Solution>

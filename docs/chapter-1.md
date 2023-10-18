@@ -51,7 +51,7 @@ yarn playwright install chromium firefox
 ```
 
 ::: tip INFO
-La force de Playwright est notamment de pouvoir supporter plusieurs navigateurs comme chromium, chrome, edge, firefox ou webkit. Si vous voulez tous les installer en une seule commande lancer uniquelement la commande install sans paramètre.
+La force de Playwright est notamment de pouvoir supporter plusieurs navigateurs comme chromium, chrome, edge, firefox ou webkit. Si vous voulez tous les installer en une seule commande lancer uniquement la commande install sans paramètre.
 
 ```
 pnpm playwright install
