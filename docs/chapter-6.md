@@ -73,4 +73,4 @@ Bravo ! vous avez réussi avec succès à trouver le secret de Microsoft !
 
 Maintenant, allez-vous révéler la véritable apparence de cet agent mystère ou alors, allez-vous rejoindre les rangs de Playwright ?
 
-N'hésitez pas à afficher votre choix sur ... [X](https://twitter.com/) :wink:
+N'hésitez pas à afficher votre choix sur ... [X](https://twitter.com/intent/tweet/?text=Je%20viens%20de%20terminer%20avec%20succ%C3%A8s%20l%27op%C3%A9ration%20%3A%20Playwright%20%F0%9F%8E%AD%20lors%20du%20%40devfestnantes%20%21%0A%0ATout%20comme%20%40mathieumure%2C%20je%20suis%20maintenant%20un%20membre%20du%20%40playwrightweb.%0A%0AEnvie%20de%20tenter%20l%27aventure%2C%20RDV%20%F0%9F%91%89%20https%3A%2F%2Fmathieumure.github.io%2Fworkshop-playwright) :wink:
