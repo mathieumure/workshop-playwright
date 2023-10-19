@@ -157,7 +157,7 @@ yarn playwright test
 
 Playwright permet également de faire du [visual testing](https://playwright.dev/docs/test-snapshots).
 
-- Dans chacun de ces 2 tests restants, naviguez vers `https://playwright.dev/`
+- Dans chacun de ces 2 tests restants, naviguez vers `ttps://playwright-site-madd.vercel.app/`
 
 <Solution>
 

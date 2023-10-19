@@ -8,7 +8,7 @@ Votre objectif va être de cliquer sur le bouton `Getting started` et vérifier 
 
 Ouvrez le fichier de test `src/chapter_4.spec.ts` et éditez le test intitulé `it should click on getting started`.
 
-- Naviguez vers `https://playwright.dev/` et attendez que le réseau ait terminé de charger grâce à `page.waitForLoadState`.
+- Naviguez vers `ttps://playwright-site-madd.vercel.app/` et attendez que le réseau ait terminé de charger grâce à `page.waitForLoadState`.
 
 ::: tip INFO
 ℹ️ Playwright a un système d'attente assez développé pour la [disponibilité d'un élement](https://playwright.dev/docs/actionability) mais il dispose également d'API pour attendre certains états :
