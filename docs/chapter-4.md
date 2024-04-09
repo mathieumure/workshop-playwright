@@ -25,10 +25,7 @@ Ouvrez le fichier de test `src/chapter_4.spec.ts` et éditez le test intitulé `
 <Solution>
 
 ```typescript
-await Promise.all([
-  page.goto('https://playwright-site-madd.vercel.app/'),
-  page.waitForLoadState('networkidle'),
-]);
+await Promise.all([page.goto('https://playwright-site-madd.vercel.app/'), page.waitForLoadState('networkidle')]);
 ```
 
 </Solution>
@@ -55,7 +52,7 @@ await Promise.all([
 <Solution>
 
 ```typescript
-await expect(page.locator('h1')).toHaveText("Getting Started with the Playwright Advanced Military Division");
+await expect(page.locator('h1')).toHaveText('Getting Started with the Playwright Advanced Military Division');
 ```
 
 </Solution>
@@ -67,7 +64,7 @@ pnpm playwright test chapter_4 --project "chromium"
 # OR
 yarn  playwright test chapter_4 --project "chromium"
 # OR
-./node_modules/.bin/playwright test chapter_4 --project "chromium"
+npm exec playwright test chapter_4 --project "chromium"
 ```
 
 ## La recherche
@@ -81,10 +78,7 @@ Nous allons maintenant vérifier que la recherche fonctionne correctement.
 <Solution>
 
 ```typescript
-await Promise.all([
-  page.goto('https://playwright-site-madd.vercel.app/'),
-  page.waitForLoadState('networkidle'),
-]);
+await Promise.all([page.goto('https://playwright-site-madd.vercel.app/'), page.waitForLoadState('networkidle')]);
 ```
 
 </Solution>
@@ -108,7 +102,7 @@ await page.getByLabel('Search').click();
 <Solution>
 
 ```typescript
-await page.getByPlaceholder('Search agents').fill('pikachu')
+await page.getByPlaceholder('Search agents').fill('pikachu');
 ```
 
 </Solution>
@@ -116,7 +110,7 @@ await page.getByPlaceholder('Search agents').fill('pikachu')
 - Attendez d'avoir une réponse de l'API, qui devrait répondre à la requête suivante `https://playwright-site-madd.vercel.app/api/search?q=pikachu`
 
 ::: tip
-  Si les expressions régulières ne sont pas votre force :wink:, les requêtes d'API peuvent être identifiées par
+Si les expressions régulières ne sont pas votre force :wink:, les requêtes d'API peuvent être identifiées par
 
 ```js
 const apiRequestRegex = /^https:\/\/playwright-site-madd\.vercel\.app\/api\/search\?q=/;

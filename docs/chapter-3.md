@@ -136,9 +136,13 @@ test('it should have the correct title', async ({ page }) => {
 <Solution>
 
 ```typescript
-expect(await page.title()).toEqual("Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology");
+expect(await page.title()).toEqual(
+  "Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology",
+);
 // or shorten
-await expect(page).toHaveTitle("Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology");
+await expect(page).toHaveTitle(
+  "Welcome to the official website of Microsoft's Advanced Defense Division | Security X technology",
+);
 ```
 
 </Solution>
@@ -150,7 +154,7 @@ pnpm playwright test
 # OR
 yarn playwright test
 # OR
-./node_modules/.bin/playwright test
+npm exec playwright test
 ```
 
 ## Visual testing

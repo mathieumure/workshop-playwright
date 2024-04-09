@@ -1,5 +1,5 @@
-import {readFile} from "fs/promises";
-import path from "path";
+import { readFile } from 'fs/promises';
+import path from 'path';
 
 const run = async () => {
   const response = await readFile(path.join('src', 'passphrases.txt'));

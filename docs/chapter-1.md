@@ -47,7 +47,7 @@ pnpm playwright install chromium firefox
 # OR
 yarn playwright install chromium firefox
 # OR
-./node_modules/.bin/playwright install chromium firefox
+npm exec playwright install chromium firefox
 ```
 
 ::: tip INFO
@@ -69,7 +69,7 @@ yarn check
 npm run check
 ```
 
-- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.39.0`).
+- Vous devriez constater que vous avez bien installé la dernière version de playwright (`v1.43.0`).
 
 Le résultat de cette commande est la première phrase qui vous permettra de décoder les codes secrets de Microsoft. **Notez-la précieusement** dans `src/passphrases.txt`.
 

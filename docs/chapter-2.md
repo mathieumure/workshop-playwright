@@ -69,11 +69,11 @@ await browser.close();
 - Exécutez votre script
 
 ```shell
-pnpm ts-node-esm src/chapter_2.ts
+pnpm tsx src/chapter_2.ts
 # OR
-yarn ts-node-esm src/chapter_2.ts
+yarn tsx src/chapter_2.ts
 # OR
-./node_modules/.bin/ts-node-esm src/chapter_2.ts
+npm exec src/chapter_2.ts
 ```
 
 Vous devriez obtenir

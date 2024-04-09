@@ -77,7 +77,7 @@ await page.waitForURL(/^https:\/\/playwright-site-madd.vercel.app\/_wpftw_\/blue
 <Solution>
 
 ```typescript
-await expect(page.getByRole('heading')).toHaveText("Your agent page is now unlocked");
+await expect(page.getByRole('heading')).toHaveText('Your agent page is now unlocked');
 ```
 
 </Solution>

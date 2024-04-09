@@ -21,7 +21,7 @@
     "@algolia/client-search": "4.20.0",
     "@types/node": "20.6.5",
     "prettier": "3.0.3",
-    "ts-node": "10.9.1",
+    "tsx": "4.7.2",
     "typescript": "5.2.2",
     "vitepress": "1.0.0-rc.20",
     "vue": "3.3.4"

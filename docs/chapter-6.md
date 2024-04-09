@@ -30,12 +30,12 @@ Effectuez les actions suivantes pour lancer l'auto génération de code
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-    await page.goto('https://playwright-site-madd.vercel.app/');
-    await page.getByRole('link', { name: 'Getting Started with Playwright' }).click();
-    await page.getByLabel('Search').click();
-    await page.getByPlaceholder('Search agents').fill('agent x');
-    await page.getByRole('link', { name: 'Agent X' }).click();
-    await page.getByRole('button', { name: 'X' }).click();
+  await page.goto('https://playwright-site-madd.vercel.app/');
+  await page.getByRole('link', { name: 'Getting Started with Playwright' }).click();
+  await page.getByLabel('Search').click();
+  await page.getByPlaceholder('Search agents').fill('agent x');
+  await page.getByRole('link', { name: 'Agent X' }).click();
+  await page.getByRole('button', { name: 'X' }).click();
 });
 ```
 
@@ -54,7 +54,7 @@ pnpm playwright test chapter_6 --trace on
 # OR
 yarn playwright test chapter_6 --trace on
 # OR
-./node_modules/.bin/playwright test chapter_6 --trace on
+npm exec playwright test chapter_6 --trace on
 ```
 
 - Ouvrez maintenant vos traces avec la commande suivante
@@ -64,7 +64,7 @@ pnpm playwright show-trace <PATH_TO_YOUR_ZIP_FILE>
 # OR
 yarn playwright show-trace <PATH_TO_YOUR_ZIP_FILE>
 # OR
-./node_modules/.bin/playwright show-trace <PATH_TO_YOUR_ZIP_FILE>
+npm exec playwright show-trace <PATH_TO_YOUR_ZIP_FILE>
 ```
 
 - Exécutez-les pas à pas dans l'interface qui vient de s'ouvrir

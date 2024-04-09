@@ -1,23 +1,24 @@
-import {exec} from "node:child_process";
-import { access } from 'fs/promises'
+import { exec } from 'node:child_process';
+import { access } from 'fs/promises';
 
-import path from "path";
+import path from 'path';
 
 const versionRegEx = /Version (?<version>.*)/;
-const installLocationRegEx = /Install location:\s+(?<installationPath>.*)\n/
+const installLocationRegEx = /Install location:\s+(?<installationPath>.*)\n/;
 
-const runPlaywrightCommand = (command) => new Promise((resolve, reject) => {
-  exec(`"${path.join('.', 'node_modules', '.bin', 'playwright')}" ${command}`, (error, stdout, stderr) => {
-    if (error) {
-      return reject(error);
-    }
-    if (stderr) {
-      return reject(stderr);
-    }
+const runPlaywrightCommand = (command) =>
+  new Promise((resolve, reject) => {
+    exec(`"${path.join('.', 'node_modules', '.bin', 'playwright')}" ${command}`, (error, stdout, stderr) => {
+      if (error) {
+        return reject(error);
+      }
+      if (stderr) {
+        return reject(stderr);
+      }
 
-    resolve(stdout)
+      resolve(stdout);
+    });
   });
-});
 
 const checkPlaywrightVersion = async () => {
   const playwrightVersion = await runPlaywrightCommand('--version');
@@ -33,7 +34,7 @@ const checkPlaywrightVersion = async () => {
   }
 
   return version;
-}
+};
 
 const checkBrowserInstalled = async (browserName) => {
   const chromiumInstallationLocation = await runPlaywrightCommand(`install ${browserName} --dry-run`);
@@ -44,16 +45,18 @@ const checkBrowserInstalled = async (browserName) => {
   }
 
   return access(installationPath);
-}
+};
 
 const run = async () => {
   const [version] = await Promise.all([
     checkPlaywrightVersion(),
     checkBrowserInstalled('chromium'),
     checkBrowserInstalled('firefox'),
-  ])
+  ]);
 
-  console.log(`Playwright is correctly installed with the version ${version} and both chromium and firefox. Great job agent !`)
-}
+  console.log(
+    `Playwright is correctly installed with the version ${version} and both chromium and firefox. Great job agent !`,
+  );
+};
 
-run()
+run();
